@@ -1,0 +1,1 @@
+del obj\*.obj bin\*.ilk bin\*.pdb bin\*.exp bin\*.lib bin\*.exe
