@@ -104,8 +104,8 @@ public:
     GameObject* rightPad;
 
     // TESTING 
-    bool leftReady = true;
-    bool rightReady = true;
+    bool leftReady = false;
+    bool rightReady = false;
 
     bool pauseOnPadCollision = false;
     const float defaultLeftPadLimitX = Width / 4.0f;

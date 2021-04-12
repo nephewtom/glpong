@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/**",
                 "${workspaceFolder}/external",
                 "${workspaceFolder}/external/imgui",
                 "${workspaceFolder}/src/util"

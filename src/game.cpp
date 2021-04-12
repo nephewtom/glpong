@@ -97,7 +97,7 @@ void Game::Init()
     }
 
     // TESTING
-    //SoundEngine->play2D(FileSystem::getPath("audio/menu.mp3").c_str(), true);
+    SoundEngine->play2D(FileSystem::getPath("audio/menu.mp3").c_str(), true);
 }
 
 void Game::ProcessInput(float dt)
@@ -273,7 +273,7 @@ void Game::Update(float dt)
                 SoundEngine->stopAllSounds();
 
                 // TESTING
-                //SoundEngine->play2D(FileSystem::getPath("audio/game.mp3").c_str(), true);
+                SoundEngine->play2D(FileSystem::getPath("audio/game.mp3").c_str(), true);
                 scoreRightInt = scoreLeftInt = 0;
                 titleFadingOut = true;
             }
@@ -297,7 +297,7 @@ void Game::Update(float dt)
             markedTime = (int)abs(Time);
 
             // TESTING
-            //SoundEngine->play2D("audio/whistle.mp3", false);
+            SoundEngine->play2D("audio/whistle.mp3", false);
         }
         if (abs(Time) > markedTime + kickTime) {
             markedTime = 0;
@@ -318,7 +318,7 @@ void Game::Update(float dt)
             scoreLeftInt++;
         }
         // TESTING
-        //SoundEngine->play2D("audio/goal.mp3", false);
+        SoundEngine->play2D("audio/goal.mp3", false);
 
         if (scoreRightInt == 5 || scoreLeftInt == 5) {
             State = GAME_RESULT;
@@ -326,8 +326,9 @@ void Game::Update(float dt)
             SoundEngine->stopAllSounds();
 
             // TESTING
-            //SoundEngine->play2D(FileSystem::getPath("audio/menu.mp3").c_str(), true);
-            //leftReady = rightReady = false;
+            SoundEngine->play2D(FileSystem::getPath("audio/menu.mp3").c_str(), true);
+            leftReady = rightReady = false;
+            
             return;
         }
         goalScored = true;
@@ -383,9 +384,9 @@ void Game::Render()
 
     leftPad->Draw(*Renderer);
     rightPad->Draw(*Renderer);
-    AxisRenderer->DrawAxis(leftPad->Position, glm::vec2(20.0f, 20.0f));
-    AxisRenderer->DrawAxis(rightPad->Position, glm::vec2(20.0f, 20.0f));
-    ArrowRenderer->DrawArrow(rightPad->Position+rightPad->Size/2.0f, glm::vec2(100.0f, 20.0f), 135.0f);
+    //AxisRenderer->DrawAxis(leftPad->Position, glm::vec2(20.0f, 20.0f));
+    //AxisRenderer->DrawAxis(rightPad->Position, glm::vec2(20.0f, 20.0f));
+    //ArrowRenderer->DrawArrow(rightPad->Position+rightPad->Size/2.0f, glm::vec2(100.0f, 20.0f), 135.0f);
 
     if (State == GAME_ACTIVE) {
         if (goalScored) {
@@ -398,8 +399,8 @@ void Game::Render()
         }
         else {
             ball->Draw(*Renderer);
-            AxisRenderer->DrawAxis(ball->Position, glm::vec2(20.0f, 20.0f));
-            ArrowRenderer->DrawArrow(ball->Position+ball->Size/2.0f, glm::vec2(50.0f, 20.0f), -45.0f);
+            //AxisRenderer->DrawAxis(ball->Position, glm::vec2(20.0f, 20.0f));
+            //ArrowRenderer->DrawArrow(ball->Position+ball->Size/2.0f, glm::vec2(50.0f, 20.0f), -45.0f);
         }
     }
 

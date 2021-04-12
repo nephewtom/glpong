@@ -1,0 +1,2 @@
+compile.bat
+link.bat

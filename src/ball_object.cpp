@@ -15,8 +15,8 @@ BallObject::BallObject(glm::vec2 pos, float radius, glm::vec2 velocity, Texture2
 
 }
 
-float BallObject::VELOCITY_RANGE_X[2] = { 300.0f, 400.0f };
-float BallObject::VELOCITY_RANGE_Y[2] = { 0.0f, 0.0f };
+float BallObject::VELOCITY_RANGE_X[2] = { 500.0f, 600.0f };
+float BallObject::VELOCITY_RANGE_Y[2] = { 350.0f, 500.0f };
 glm::vec2 BallObject::RandomVelocity()
 {
     float sign = (rand() % 2 ? 1.0f : -1.0f);
